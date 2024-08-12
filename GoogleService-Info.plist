@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyDghDJpORnFVLdgPw3DehO9KSJMbgvlPds</string>
+	<key>GCM_SENDER_ID</key>
+	<string>524636396091</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Anthony.VoiceJournal</string>
+	<key>PROJECT_ID</key>
+	<string>voice-journal-app</string>
+	<key>STORAGE_BUCKET</key>
+	<string>voice-journal-app.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:524636396091:ios:d1c94b09afd29db4229a1e</string>
+</dict>
+</plist>
