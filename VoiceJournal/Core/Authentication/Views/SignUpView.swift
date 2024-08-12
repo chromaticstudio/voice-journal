@@ -32,6 +32,13 @@ struct SignUpView: View {
                           image: "envelope")
                 .autocapitalization(.none)
                 
+                InputView(text: $password,
+                          title: "Password",
+                          placeholder: "password",
+                          image: "lock",
+                          isSecureField: true)
+                .autocapitalization(.none)
+                
                 // Sign Up Button
                 PrimaryButton(text: "Save",
                               imageName: "arrow.right",
