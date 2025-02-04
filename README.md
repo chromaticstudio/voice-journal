@@ -14,9 +14,3 @@
 - **Firestore** – Cloud sync and multi-device support
 - **Speech Framework** – Audio transcription
 - **CloudKit** – Private and public data storage
-
-## Installation
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/chromaticstudio/voice-journal.git
-   cd voice-journal
