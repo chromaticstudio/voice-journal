@@ -49,7 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BDDA9D112D52ACB00080FE21 /* PBXContainerItemProxy */ = {
+		BDDA9D1E2D52AE7F0080FE21 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BD6653CD2C15C27F00296F20 /* Project object */;
 			proxyType = 1;
@@ -95,13 +95,12 @@
 		BDAC274A2C1EE16000AC5561 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		BDD9334F2C410ECD00F44572 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		BDD933512C4110CE00F44572 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		BDDA9D0D2D52ACB00080FE21 /* VoiceJournalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceJournalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDDA9D1A2D52AE7F0080FE21 /* VoiceJournalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceJournalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE528102C21693D005CE932 /* CoreDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		BDDA9D012D52A97E0080FE21 /* VoiceJournalTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = VoiceJournalTests; sourceTree = "<group>"; };
-		BDDA9D0E2D52ACB00080FE21 /* VoiceJournalTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = VoiceJournalTests; sourceTree = "<group>"; };
+		BDDA9D1B2D52AE7F0080FE21 /* VoiceJournalTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = VoiceJournalTests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +116,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BDDA9D0A2D52ACB00080FE21 /* Frameworks */ = {
+		BDDA9D172D52AE7F0080FE21 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -198,8 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				BD6653D72C15C27F00296F20 /* VoiceJournal */,
-				BDDA9D012D52A97E0080FE21 /* VoiceJournalTests */,
-				BDDA9D0E2D52ACB00080FE21 /* VoiceJournalTests */,
+				BDDA9D1B2D52AE7F0080FE21 /* VoiceJournalTests */,
 				BD6653D62C15C27F00296F20 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -208,7 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				BD6653D52C15C27F00296F20 /* VoiceJournal.app */,
-				BDDA9D0D2D52ACB00080FE21 /* VoiceJournalTests.xctest */,
+				BDDA9D1A2D52AE7F0080FE21 /* VoiceJournalTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -336,27 +334,27 @@
 			productReference = BD6653D52C15C27F00296F20 /* VoiceJournal.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BDDA9D0C2D52ACB00080FE21 /* VoiceJournalTests */ = {
+		BDDA9D192D52AE7F0080FE21 /* VoiceJournalTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BDDA9D132D52ACB00080FE21 /* Build configuration list for PBXNativeTarget "VoiceJournalTests" */;
+			buildConfigurationList = BDDA9D202D52AE7F0080FE21 /* Build configuration list for PBXNativeTarget "VoiceJournalTests" */;
 			buildPhases = (
-				BDDA9D092D52ACB00080FE21 /* Sources */,
-				BDDA9D0A2D52ACB00080FE21 /* Frameworks */,
-				BDDA9D0B2D52ACB00080FE21 /* Resources */,
+				BDDA9D162D52AE7F0080FE21 /* Sources */,
+				BDDA9D172D52AE7F0080FE21 /* Frameworks */,
+				BDDA9D182D52AE7F0080FE21 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BDDA9D122D52ACB00080FE21 /* PBXTargetDependency */,
+				BDDA9D1F2D52AE7F0080FE21 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				BDDA9D0E2D52ACB00080FE21 /* VoiceJournalTests */,
+				BDDA9D1B2D52AE7F0080FE21 /* VoiceJournalTests */,
 			);
 			name = VoiceJournalTests;
 			packageProductDependencies = (
 			);
 			productName = VoiceJournalTests;
-			productReference = BDDA9D0D2D52ACB00080FE21 /* VoiceJournalTests.xctest */;
+			productReference = BDDA9D1A2D52AE7F0080FE21 /* VoiceJournalTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -367,12 +365,12 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					BD6653D42C15C27F00296F20 = {
 						CreatedOnToolsVersion = 15.4;
 					};
-					BDDA9D0C2D52ACB00080FE21 = {
+					BDDA9D192D52AE7F0080FE21 = {
 						CreatedOnToolsVersion = 16.2;
 						TestTargetID = BD6653D42C15C27F00296F20;
 					};
@@ -395,7 +393,7 @@
 			projectRoot = "";
 			targets = (
 				BD6653D42C15C27F00296F20 /* VoiceJournal */,
-				BDDA9D0C2D52ACB00080FE21 /* VoiceJournalTests */,
+				BDDA9D192D52AE7F0080FE21 /* VoiceJournalTests */,
 			);
 		};
 /* End PBXProject section */
@@ -412,7 +410,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BDDA9D0B2D52ACB00080FE21 /* Resources */ = {
+		BDDA9D182D52AE7F0080FE21 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -459,7 +457,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BDDA9D092D52ACB00080FE21 /* Sources */ = {
+		BDDA9D162D52AE7F0080FE21 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -469,10 +467,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BDDA9D122D52ACB00080FE21 /* PBXTargetDependency */ = {
+		BDDA9D1F2D52AE7F0080FE21 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BD6653D42C15C27F00296F20 /* VoiceJournal */;
-			targetProxy = BDDA9D112D52ACB00080FE21 /* PBXContainerItemProxy */;
+			targetProxy = BDDA9D1E2D52AE7F0080FE21 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -511,6 +509,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -572,6 +571,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -599,6 +599,7 @@
 				CODE_SIGN_ENTITLEMENTS = VoiceJournal/VoiceJournal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"VoiceJournal/Preview Content\"";
 				DEVELOPMENT_TEAM = Y6CGNHBBD2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -642,6 +643,7 @@
 				CODE_SIGN_ENTITLEMENTS = VoiceJournal/VoiceJournal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"VoiceJournal/Preview Content\"";
 				DEVELOPMENT_TEAM = Y6CGNHBBD2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -677,7 +679,7 @@
 			};
 			name = Release;
 		};
-		BDDA9D142D52ACB00080FE21 /* Debug */ = {
+		BDDA9D212D52AE7F0080FE21 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -686,22 +688,18 @@
 				DEVELOPMENT_TEAM = Y6CGNHBBD2;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Anthony.VoiceJournalTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SUPPORTS_MACCATALYST = NO;
+				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VoiceJournal.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VoiceJournal";
-				XROS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Debug;
 		};
-		BDDA9D152D52ACB00080FE21 /* Release */ = {
+		BDDA9D222D52AE7F0080FE21 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -710,18 +708,15 @@
 				DEVELOPMENT_TEAM = Y6CGNHBBD2;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Anthony.VoiceJournalTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SUPPORTS_MACCATALYST = NO;
+				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VoiceJournal.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VoiceJournal";
-				XROS_DEPLOYMENT_TARGET = 2.2;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -746,11 +741,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BDDA9D132D52ACB00080FE21 /* Build configuration list for PBXNativeTarget "VoiceJournalTests" */ = {
+		BDDA9D202D52AE7F0080FE21 /* Build configuration list for PBXNativeTarget "VoiceJournalTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BDDA9D142D52ACB00080FE21 /* Debug */,
-				BDDA9D152D52ACB00080FE21 /* Release */,
+				BDDA9D212D52AE7F0080FE21 /* Debug */,
+				BDDA9D222D52AE7F0080FE21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

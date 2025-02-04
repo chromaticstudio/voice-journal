@@ -5,12 +5,11 @@
 //  Created by Anthony Mistretta on 2/4/25.
 //
 
-import Testing
+import XCTest
 
-struct VoiceJournalTests {
+class VoiceJournalTests: XCTestCase {
 
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+    func testExample() {
+        XCTAssertTrue(true, "This test will always pass")
     }
-
 }

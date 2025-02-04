@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1540"
+   LastUpgradeVersion = "1620"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -35,7 +35,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BDDA9CFF2D52A97E0080FE21"
+               BlueprintIdentifier = "BDDA9D192D52AE7F0080FE21"
                BuildableName = "VoiceJournalTests.xctest"
                BlueprintName = "VoiceJournalTests"
                ReferencedContainer = "container:VoiceJournal.xcodeproj">
