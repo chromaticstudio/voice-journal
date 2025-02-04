@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -48,6 +48,16 @@
 		BDE528112C21693D005CE932 /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE528102C21693D005CE932 /* CoreDataModel.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BDDA9D112D52ACB00080FE21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD6653CD2C15C27F00296F20 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD6653D42C15C27F00296F20;
+			remoteInfo = VoiceJournal;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		BD0699B92C522A24004068CA /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		BD0699F72C532807004068CA /* SettingsRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
@@ -85,8 +95,14 @@
 		BDAC274A2C1EE16000AC5561 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		BDD9334F2C410ECD00F44572 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		BDD933512C4110CE00F44572 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		BDDA9D0D2D52ACB00080FE21 /* VoiceJournalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceJournalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE528102C21693D005CE932 /* CoreDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		BDDA9D012D52A97E0080FE21 /* VoiceJournalTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = VoiceJournalTests; sourceTree = "<group>"; };
+		BDDA9D0E2D52ACB00080FE21 /* VoiceJournalTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = VoiceJournalTests; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		BD6653D22C15C27F00296F20 /* Frameworks */ = {
@@ -98,6 +114,13 @@
 				BD212AB72C436D9F003383A6 /* FirebaseFirestore in Frameworks */,
 				BD212AC12C437087003383A6 /* FirebaseAnalytics in Frameworks */,
 				BD212AB92C436D9F003383A6 /* FirebaseFirestoreSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDDA9D0A2D52ACB00080FE21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +198,8 @@
 			isa = PBXGroup;
 			children = (
 				BD6653D72C15C27F00296F20 /* VoiceJournal */,
+				BDDA9D012D52A97E0080FE21 /* VoiceJournalTests */,
+				BDDA9D0E2D52ACB00080FE21 /* VoiceJournalTests */,
 				BD6653D62C15C27F00296F20 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -183,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				BD6653D52C15C27F00296F20 /* VoiceJournal.app */,
+				BDDA9D0D2D52ACB00080FE21 /* VoiceJournalTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -310,6 +336,29 @@
 			productReference = BD6653D52C15C27F00296F20 /* VoiceJournal.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BDDA9D0C2D52ACB00080FE21 /* VoiceJournalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDDA9D132D52ACB00080FE21 /* Build configuration list for PBXNativeTarget "VoiceJournalTests" */;
+			buildPhases = (
+				BDDA9D092D52ACB00080FE21 /* Sources */,
+				BDDA9D0A2D52ACB00080FE21 /* Frameworks */,
+				BDDA9D0B2D52ACB00080FE21 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BDDA9D122D52ACB00080FE21 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				BDDA9D0E2D52ACB00080FE21 /* VoiceJournalTests */,
+			);
+			name = VoiceJournalTests;
+			packageProductDependencies = (
+			);
+			productName = VoiceJournalTests;
+			productReference = BDDA9D0D2D52ACB00080FE21 /* VoiceJournalTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -317,11 +366,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1540;
+				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					BD6653D42C15C27F00296F20 = {
 						CreatedOnToolsVersion = 15.4;
+					};
+					BDDA9D0C2D52ACB00080FE21 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = BD6653D42C15C27F00296F20;
 					};
 				};
 			};
@@ -342,6 +395,7 @@
 			projectRoot = "";
 			targets = (
 				BD6653D42C15C27F00296F20 /* VoiceJournal */,
+				BDDA9D0C2D52ACB00080FE21 /* VoiceJournalTests */,
 			);
 		};
 /* End PBXProject section */
@@ -355,6 +409,13 @@
 				BD212AB22C436C35003383A6 /* GoogleService-Info.plist in Resources */,
 				BD6653E12C15C28100296F20 /* Preview Assets.xcassets in Resources */,
 				BD6653DD2C15C28100296F20 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDDA9D0B2D52ACB00080FE21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,7 +459,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BDDA9D092D52ACB00080FE21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BDDA9D122D52ACB00080FE21 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BD6653D42C15C27F00296F20 /* VoiceJournal */;
+			targetProxy = BDDA9D112D52ACB00080FE21 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		BD6653E22C15C28100296F20 /* Debug */ = {
@@ -530,8 +606,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VoiceJournal/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app uses the microphone to record your voice for your voice journals";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Your app requires access to the microphone to record audio.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "VoiceJournal requires access to speech recognition to transcribe your voice notes and improve accessibility.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -540,8 +616,7 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -549,8 +624,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Anthony.VoiceJournal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = NO;
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -573,8 +649,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VoiceJournal/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app uses the microphone to record your voice for your voice journals";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Your app requires access to the microphone to record audio.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "VoiceJournal requires access to speech recognition to transcribe your voice notes and improve accessibility.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -583,8 +659,7 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -592,12 +667,61 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Anthony.VoiceJournal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = NO;
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BDDA9D142D52ACB00080FE21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y6CGNHBBD2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Anthony.VoiceJournalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VoiceJournal.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VoiceJournal";
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		BDDA9D152D52ACB00080FE21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y6CGNHBBD2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Anthony.VoiceJournalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VoiceJournal.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VoiceJournal";
+				XROS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Release;
 		};
@@ -618,6 +742,15 @@
 			buildConfigurations = (
 				BD6653E52C15C28100296F20 /* Debug */,
 				BD6653E62C15C28100296F20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BDDA9D132D52ACB00080FE21 /* Build configuration list for PBXNativeTarget "VoiceJournalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDDA9D142D52ACB00080FE21 /* Debug */,
+				BDDA9D152D52ACB00080FE21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
