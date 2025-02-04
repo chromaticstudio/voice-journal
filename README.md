@@ -1,16 +1,15 @@
 # VoiceJournal 🎙️  
-*A modern voice journaling app using SwiftUI, CoreData, and Firestore.*
+**Journaling with your voice, powered by AI & emotion detection.**  
 
-## Features
-- 🎤 **Record voice memos** and transcribe them using Apple's Speech framework
-- 📂 **Organize recordings** with timestamps and emotion-based tagging
-- 🔊 **Adjust playback speed** and visualize waveforms
-- ☁️ **Sync securely** with CloudKit & Firestore
-- 🎨 **Emotion-based color themes** for a personalized journaling experience
+### 🔥 Features:
+- 🎤 **Record & Transcribe** – Convert voice notes into text instantly.
+- 🎭 **Emotion-Based Journaling** – See your journal entries color-coded by mood.
+- 🔊 **Adjustable Playback** – Control playback speed & relive moments your way.
+- ☁️ **Cloud Sync** – Never lose a memory with Firestore & iCloud.
 
-## Tech Stack
-- **SwiftUI** – For a modern, declarative UI
-- **CoreData** – Local storage for journal entries
-- **Firestore** – Cloud sync and multi-device support
-- **Speech Framework** – Audio transcription
-- **CloudKit** – Private and public data storage
+### 📲 **Tech Stack**
+- **SwiftUI** – Beautiful, modern UI framework.
+- **CoreData** – Local storage for journal entries.
+- **Firestore & CloudKit** – Secure cloud syncing.
+- **Speech Framework** – Apple’s built-in voice recognition.
+- **Machine Learning** – AI-powered emotion analysis.
