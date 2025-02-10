@@ -12,10 +12,6 @@ struct Persistence {
     let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {
-        // Register the transformers
-       ValueTransformer.setValueTransformer(EmotionsTransformer(), forName: NSValueTransformerName("EmotionsTransformer"))
-       ValueTransformer.setValueTransformer(EmotionColorsTransformer(), forName: NSValueTransformerName("EmotionColorsTransformer"))
-      
         container = NSPersistentContainer(name: "VoiceJournal")
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")

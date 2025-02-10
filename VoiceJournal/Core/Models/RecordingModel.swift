@@ -14,6 +14,7 @@ import NaturalLanguage
 class RecordingModel: NSObject, ObservableObject, AVAudioRecorderDelegate {
     @Published var isRecording = false
     @Published var recordingFailed = false
+    @Published var transcriptionText: String = ""
     
     private var viewContext: NSManagedObjectContext
     private var audioEngine: AVAudioEngine
@@ -21,20 +22,20 @@ class RecordingModel: NSObject, ObservableObject, AVAudioRecorderDelegate {
     private var audioInputNode: AVAudioInputNode
     private var audioFileURL: URL?
     
+    private var recognitionTask: SFSpeechRecognitionTask?  // Keep a reference to prevent deallocation
     private var bufferSize: AVAudioFrameCount = 4096
     private var format: AVAudioFormat
-        
+    
     init(viewContext: NSManagedObjectContext) {
-       self.viewContext = viewContext
-       self.audioEngine = AVAudioEngine()
-       self.audioInputNode = audioEngine.inputNode
-       self.format = audioInputNode.inputFormat(forBus: 0)
-       super.init()
-   }
+        self.viewContext = viewContext
+        self.audioEngine = AVAudioEngine()
+        self.audioInputNode = audioEngine.inputNode
+        self.format = audioInputNode.inputFormat(forBus: 0)
+        super.init()
+    }
     
     // MARK: - Permissions
     
-    // Request Mic Permission
     func requestMicrophonePermission(completion: @escaping (Bool) -> Void) {
         AVAudioApplication.requestRecordPermission() { granted in
             DispatchQueue.main.async {
@@ -43,7 +44,6 @@ class RecordingModel: NSObject, ObservableObject, AVAudioRecorderDelegate {
         }
     }
     
-    // Request speech recognition
     func requestSpeechRecognitionAuthorization(completion: @escaping (Bool) -> Void) {
         SFSpeechRecognizer.requestAuthorization { authStatus in
             DispatchQueue.main.async {
@@ -56,10 +56,9 @@ class RecordingModel: NSObject, ObservableObject, AVAudioRecorderDelegate {
             }
         }
     }
-   
+    
     // MARK: - Configuration
     
-    // Configure Audio Session and Recorder
     func configureAudioSession() {
         requestMicrophonePermission { [weak self] micGranted in
             guard let self = self else { return }
@@ -78,10 +77,9 @@ class RecordingModel: NSObject, ObservableObject, AVAudioRecorderDelegate {
             }
         }
     }
-
+    
     // MARK: - Start / Stop Recording
     
-    // Start Recording
     private func startRecordingSession() {
         do {
             let audioSession = AVAudioSession.sharedInstance()
@@ -118,7 +116,6 @@ class RecordingModel: NSObject, ObservableObject, AVAudioRecorderDelegate {
         }
     }
     
-    // Stop Recording
     func stopRecording() {
         audioEngine.stop()
         isRecording = false
@@ -129,11 +126,10 @@ class RecordingModel: NSObject, ObservableObject, AVAudioRecorderDelegate {
     
     // MARK: - Process Audio
     
-    // Finished Recording
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if flag, let audioFileURL = self.audioFileURL {
             print("Audio recorder stopped successfully")
-            // Save recording data first without transcription
+            // Save recording data without transcription (if needed)
             saveRecordingData(audioURL: audioFileURL)
             
             // Start transcription in background
@@ -141,7 +137,8 @@ class RecordingModel: NSObject, ObservableObject, AVAudioRecorderDelegate {
                 self.transcribeAudio(url: audioFileURL) { transcription in
                     DispatchQueue.main.async {
                         if let transcription = transcription {
-                            self.processEmotions(audioFileURL: audioFileURL, transcription: transcription)
+                            self.transcriptionText = transcription
+                            self.updateJournal(audioFileURL: audioFileURL, transcription: transcription)
                         }
                     }
                 }
@@ -151,96 +148,49 @@ class RecordingModel: NSObject, ObservableObject, AVAudioRecorderDelegate {
         }
     }
     
-    // Transcribe Audio
     private func transcribeAudio(url: URL, completion: @escaping (String?) -> Void) {
-        let recognizer = SFSpeechRecognizer()
-        let request = SFSpeechURLRecognitionRequest(url: url)
+        guard let recognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US")) else {
+            print("Speech recognizer is not available for the specified locale.")
+            completion(nil)
+            return
+        }
         
-        recognizer?.recognitionTask(with: request) { result, error in
+        if !recognizer.isAvailable {
+            print("Speech recognizer is not available at the moment.")
+            completion(nil)
+            return
+        }
+        
+        let request = SFSpeechURLRecognitionRequest(url: url)
+        self.recognitionTask = recognizer.recognitionTask(with: request) { result, error in
             if let error = error {
                 print("Transcription error: \(error.localizedDescription)")
+                self.recognitionTask = nil
                 completion(nil)
             } else if let result = result {
+                print("Intermediate transcription result: \(result.bestTranscription.formattedString)")
                 if result.isFinal {
+                    print("Final transcription: \(result.bestTranscription.formattedString)")
+                    self.recognitionTask = nil
                     completion(result.bestTranscription.formattedString)
                 }
             }
         }
     }
     
-    // MARK: - Colors and Emotion Detection
-
-    // Process Emotion, Color, and Update Journal
-    private func processEmotions(audioFileURL: URL, transcription: String) {
-        let emotions = detectEmotion(for: transcription)
-        let emotionColors = colorForEmotion(emotions)
-        updateJournal(audioFileURL: audioFileURL, transcription: transcription, emotions: emotions, colors: emotionColors)
-    }
-    
-    // Emotion detection
-    func detectEmotion(for text: String) -> [String] {
-        let tagger = NLTagger(tagSchemes: [.sentimentScore])
-        tagger.string = text
-        let (sentiment, _) = tagger.tag(at: text.startIndex, unit: .paragraph, scheme: .sentimentScore)
-        
-        guard let sentimentScore = sentiment?.rawValue, let score = Double(sentimentScore) else {
-            return ["neutral"]
-        }
-        
-        if score > 0.75 {
-            return ["joy", "happiness"]
-        } else if score > 0.5 {
-            return ["contentment", "pleasure"]
-        } else if score > 0.25 {
-            return ["calm", "satisfaction"]
-        } else if score < -0.75 {
-            return ["anger", "rage"]
-        } else if score < -0.5 {
-            return ["sadness", "grief"]
-        } else if score < -0.25 {
-            return ["disappointment", "frustration"]
-        } else {
-            return ["neutral"]
-        }
-    }
-    
-    // Assign colors to emotions
-    func colorForEmotion(_ emotions: [String]) -> [Color] {
-        var emotionColors: [Color] = []
-
-        for emotion in emotions {
-            switch emotion {
-            case "joy", "happiness":
-                emotionColors.append(Color.yellow)
-            case "contentment", "pleasure":
-                emotionColors.append(Color.green)
-            case "calm", "satisfaction":
-                emotionColors.append(Color.blue)
-            case "anger", "rage":
-                emotionColors.append(Color.red)
-            case "sadness", "grief":
-                emotionColors.append(Color.gray)
-            case "disappointment", "frustration":
-                emotionColors.append(Color.orange)
-            default:
-                emotionColors.append(Color.gray)
-            }
-        }
-
-        return emotionColors
-    }
-
-    
     // MARK: - Save and Update Journal
     
-    // Save Recording to Core Data
     func saveRecordingData(audioURL: URL, transcription: String? = nil) {
         let newJournal = Journal(context: viewContext)
         newJournal.audioFileName = audioURL.lastPathComponent
         newJournal.date = Date()
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d/MM/yy"
+        newJournal.name = "New Journal: \(dateFormatter.string(from: newJournal.date!))"
+        
         newJournal.audioTranscription = transcription
         
-        // Attempt to retrieve and save the duration
         do {
             let audioPlayer = try AVAudioPlayer(contentsOf: audioURL)
             newJournal.duration = audioPlayer.duration
@@ -255,20 +205,15 @@ class RecordingModel: NSObject, ObservableObject, AVAudioRecorderDelegate {
         }
     }
     
-    // Update Journal with Transcription, Emotions, Colors
-    private func updateJournal(audioFileURL: URL, transcription: String, emotions: [String], colors: [Color]) {
+    private func updateJournal(audioFileURL: URL, transcription: String) {
         let fetchRequest: NSFetchRequest<Journal> = Journal.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "audioFileName == %@", audioFileURL.lastPathComponent)
-
         do {
             let journals = try viewContext.fetch(fetchRequest)
             if let journal = journals.first {
                 journal.audioTranscription = transcription
-                journal.emotions = emotions as NSObject
-                journal.emotionColors = colors as NSObject
-
                 try viewContext.save()
-                print("Journal updated with transcription, emotions, and colors.")
+                print("Journal updated with transcription.")
             } else {
                 print("No journal found for audio file name \(audioFileURL.lastPathComponent)")
             }
@@ -277,16 +222,16 @@ class RecordingModel: NSObject, ObservableObject, AVAudioRecorderDelegate {
         }
     }
     
-    // MARK: - Helpers
+    // MARK: - AV Audio Recorder Error
     
-    // AV Audio Recorder Error
     func audioRecorderEncodeErrorDidOccur(_ recorder: AVAudioRecorder, error: Error?) {
         if let error = error {
             print("Audio recording error: \(error.localizedDescription)")
         }
     }
     
-    // Method to get unique audio file URL
+    // MARK: - Helper for Unique File URL
+    
     private func getUniqueAudioFileURL() -> URL? {
         guard let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             print("Documents directory not found.")

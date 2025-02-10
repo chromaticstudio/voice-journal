@@ -23,8 +23,6 @@
 		BD212AC12C437087003383A6 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BD212AC02C437087003383A6 /* FirebaseAnalytics */; };
 		BD212AC22C438530003383A6 /* JournalRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6653FD2C15EC8400296F20 /* JournalRow.swift */; };
 		BD212AC52C43B3B6003383A6 /* SoundwaveLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD212AC42C43B3B6003383A6 /* SoundwaveLogo.swift */; };
-		BD212AC72C44B876003383A6 /* EmotionsTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD212AC62C44B876003383A6 /* EmotionsTransformer.swift */; };
-		BD212AC92C44D301003383A6 /* UIColorsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD212AC82C44D301003383A6 /* UIColorsExtension.swift */; };
 		BD2213792C461F2200EE141D /* MoodRingCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2213782C461F2200EE141D /* MoodRingCircle.swift */; };
 		BD4C43A32C3B87330013FEAC /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4C43A22C3B87330013FEAC /* RecordView.swift */; };
 		BD4C43A52C3B89D20013FEAC /* RecordingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4C43A42C3B89D20013FEAC /* RecordingModel.swift */; };
@@ -43,6 +41,7 @@
 		BD7B64F12C3903270035F81E /* sample.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BD7B64EF2C3900CC0035F81E /* sample.m4a */; };
 		BDAC27452C1ED97600AC5561 /* VoiceJournal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BDAC27432C1ED97600AC5561 /* VoiceJournal.xcdatamodeld */; };
 		BDAC274B2C1EE16000AC5561 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC274A2C1EE16000AC5561 /* Persistence.swift */; };
+		BDD7C0842D58500B00C8EC7B /* DevToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD7C0832D58500500C8EC7B /* DevToolsView.swift */; };
 		BDD933502C410ECD00F44572 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD9334F2C410ECD00F44572 /* PrimaryButton.swift */; };
 		BDD933522C4110CE00F44572 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD933512C4110CE00F44572 /* ProfileView.swift */; };
 		BDE528112C21693D005CE932 /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE528102C21693D005CE932 /* CoreDataModel.swift */; };
@@ -68,8 +67,6 @@
 		BD212AAF2C427F5F003383A6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BD212AB12C436C35003383A6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BD212AC42C43B3B6003383A6 /* SoundwaveLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundwaveLogo.swift; sourceTree = "<group>"; };
-		BD212AC62C44B876003383A6 /* EmotionsTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionsTransformer.swift; sourceTree = "<group>"; };
-		BD212AC82C44D301003383A6 /* UIColorsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorsExtension.swift; sourceTree = "<group>"; };
 		BD2213782C461F2200EE141D /* MoodRingCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodRingCircle.swift; sourceTree = "<group>"; };
 		BD4C43A22C3B87330013FEAC /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
 		BD4C43A42C3B89D20013FEAC /* RecordingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingModel.swift; sourceTree = "<group>"; };
@@ -93,6 +90,7 @@
 		BD7B64EF2C3900CC0035F81E /* sample.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample.m4a; sourceTree = "<group>"; };
 		BDAC27442C1ED97600AC5561 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		BDAC274A2C1EE16000AC5561 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		BDD7C0832D58500500C8EC7B /* DevToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevToolsView.swift; sourceTree = "<group>"; };
 		BDD9334F2C410ECD00F44572 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		BDD933512C4110CE00F44572 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		BDDA9D1A2D52AE7F0080FE21 /* VoiceJournalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceJournalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,15 +161,6 @@
 			path = Journals;
 			sourceTree = "<group>";
 		};
-		BD212ACA2C44F591003383A6 /* EmotionColors */ = {
-			isa = PBXGroup;
-			children = (
-				BD212AC62C44B876003383A6 /* EmotionsTransformer.swift */,
-				BD212AC82C44D301003383A6 /* UIColorsExtension.swift */,
-			);
-			path = EmotionColors;
-			sourceTree = "<group>";
-		};
 		BD2213772C461F0C00EE141D /* Imagery */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +173,7 @@
 		BD4C43A62C3B8BD80013FEAC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BDD7C0832D58500500C8EC7B /* DevToolsView.swift */,
 				BD66FDE72C3ECA3200E69C17 /* HomeView.swift */,
 				BD6653F72C15E73700296F20 /* JournalListView.swift */,
 				BD6653FB2C15EB3300296F20 /* JournalView.swift */,
@@ -283,7 +273,6 @@
 				BD6653F52C15E71100296F20 /* DataModels */,
 				BD4C43A42C3B89D20013FEAC /* RecordingModel.swift */,
 				BD66FDDF2C3CD2BD00E69C17 /* Formatters.swift */,
-				BD212ACA2C44F591003383A6 /* EmotionColors */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -426,6 +415,7 @@
 			files = (
 				BD5872962C3A4D960080FE5F /* Playback.swift in Sources */,
 				BD0699FA2C532B83004068CA /* InputView.swift in Sources */,
+				BDD7C0842D58500B00C8EC7B /* DevToolsView.swift in Sources */,
 				BD66FDE22C3CDCCB00E69C17 /* SearchBar.swift in Sources */,
 				BD6653D92C15C27F00296F20 /* VoiceJournal.swift in Sources */,
 				BDE528112C21693D005CE932 /* CoreDataModel.swift in Sources */,
@@ -436,7 +426,6 @@
 				BD66FDE02C3CD2BD00E69C17 /* Formatters.swift in Sources */,
 				BD4C43A52C3B89D20013FEAC /* RecordingModel.swift in Sources */,
 				BD4C43A32C3B87330013FEAC /* RecordView.swift in Sources */,
-				BD212AC72C44B876003383A6 /* EmotionsTransformer.swift in Sources */,
 				BD66FDE42C3CE44400E69C17 /* CustomSlider.swift in Sources */,
 				BD212AC22C438530003383A6 /* JournalRow.swift in Sources */,
 				BD5872972C3A4D960080FE5F /* RecordButton.swift in Sources */,
@@ -453,7 +442,6 @@
 				BD069A022C534FCA004068CA /* ContentView.swift in Sources */,
 				BD069A042C5354B7004068CA /* SignUpView.swift in Sources */,
 				BDD933502C410ECD00F44572 /* PrimaryButton.swift in Sources */,
-				BD212AC92C44D301003383A6 /* UIColorsExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

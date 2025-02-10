@@ -1,5 +1,5 @@
 //
-//  VoiceJournal.swift
+//  VoiceJournalApp.swift
 //  VoiceJournal
 //
 //  Created by Anthony Mistretta on 6/9/24.

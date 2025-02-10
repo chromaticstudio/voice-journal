@@ -28,38 +28,11 @@ struct JournalView: View {
     private var formattedDuration: String {
         return FormatterUtils.shared.formatDuration(journal.duration)
     }
-    
-    // Get emotion colors
-    private var emotionColors: [Color] {
-        guard let emotionColorsData = journal.emotionColors as? Data else {
-            print("No emotionColors data found for journal.")
-            return []
-        }
-
-        do {
-            let decoder = JSONDecoder()
-            let colorStrings = try decoder.decode([String].self, from: emotionColorsData)
-            return colorStrings.compactMap { hexString in
-                UIColor(hex: hexString).map { Color($0) }
-            }
-        } catch {
-            print("Error decoding emotionColors: \(error.localizedDescription)")
-            return []
-        }
-    }
 
     var body: some View {        
         VStack {
             VStack {
                 ZStack(alignment: .bottomLeading) {
-                    LinearGradient(
-                        gradient: Gradient(colors: emotionColors + [Color.clear]),
-                           startPoint: .top,
-                           endPoint: .bottom
-                       )
-                       .frame(height: 300)
-                       .background(Color("ContrastColor"))
-                    
                     GeometryReader { geometry in
                         VStack {
                             Spacer()

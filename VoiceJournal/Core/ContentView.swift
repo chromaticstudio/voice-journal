@@ -29,6 +29,14 @@ struct ContentView: View {
                         .tabItem {
                             Label("Profile", systemImage: "person")
                         }
+                   
+                    // Only show DevToolsView in debug builds.
+                    #if DEBUG
+                    DevToolsView()
+                        .tabItem {
+                            Label("Dev Tools", systemImage: "wrench")
+                        }
+                    #endif
                 }
                 .accentColor(Color("AccentColor"))
             } else {
